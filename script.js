@@ -116,17 +116,37 @@ function drawBall() {
 }
 
 function drawPaddle() {
-  ctx.fillStyle = "red"
+  ctx.shadowColor = "rgba(255, 0, 0, 0.5)" // Red shadow
+  ctx.shadowBlur = 0 // No blur
+  ctx.shadowOffsetX = 3 // Shadow on the right
+  ctx.shadowOffsetY = 3 // Shadow on the bottom
+
+  ctx.fillStyle = "red" // Paddle color
   ctx.fillRect(paddle.x, paddle.y, paddleWidth, PADDLE_HEIGHT)
+
+  ctx.strokeStyle = "#ff5722" // Orange border
+  ctx.lineWidth = 2
+  ctx.strokeRect(paddle.x, paddle.y, paddleWidth, PADDLE_HEIGHT)
+
+  ctx.shadowColor = "transparent" // Reset shadow for other elements
 }
 
 function drawBricks() {
   bricks.forEach((brick) => {
     if (!brick.isHit) {
-      ctx.fillStyle = "blue"
+      ctx.shadowColor = "rgba(255, 0, 0, 0.5)" // Red shadow
+      ctx.shadowBlur = 0 // No blur
+      ctx.shadowOffsetX = 4 // Shadow on the right
+      ctx.shadowOffsetY = 4 // Shadow on the bottom
+
+      ctx.fillStyle = "blue" // Brick color
       ctx.fillRect(brick.x, brick.y, BRICK_WIDTH, BRICK_HEIGHT)
-      ctx.strokeStyle = "white"
+
+      ctx.strokeStyle = "white" // Border color
+      ctx.lineWidth = 2
       ctx.strokeRect(brick.x, brick.y, BRICK_WIDTH, BRICK_HEIGHT)
+
+      ctx.shadowColor = "transparent" // Reset shadow for subsequent drawing
     }
   })
 }

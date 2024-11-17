@@ -35,7 +35,7 @@ const BRICK_COLS = Math.floor(canvas.width / BRICK_WIDTH) - 1
 
 function createBricks() {
   bricks = []
-  for (let row = 0; row < 1; row++) {
+  for (let row = 0; row < userBrickRows; row++) {
     for (let col = 0; col < BRICK_COLS; col++) {
       bricks.push({
         x: col * BRICK_WIDTH,

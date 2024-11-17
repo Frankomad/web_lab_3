@@ -54,7 +54,7 @@ function resetGame() {
     x: canvas.width / 2,
     y: canvas.height - 60,
     dx: getRandomDirection(),
-    dy: -userBallSpeed,
+    dy: -(userBallSpeed * 4),
   }
   paddle.x = canvas.width / 2 - paddleWidth / 2
   createBricks()
@@ -143,26 +143,20 @@ function drawScore() {
 }
 
 function moveBall() {
-  const speedMultiplier = 1.8 // Adjust this value to control how much faster the ball gets
-
-  ball.x += ball.dx * speedMultiplier
-  ball.y += ball.dy * speedMultiplier
-
+  ball.x += ball.dx
+  ball.y += ball.dy
   if (ball.x + BALL_RADIUS > canvas.width) {
     ball.x = canvas.width - BALL_RADIUS
     ball.dx *= -1
   }
-
   if (ball.x - BALL_RADIUS < 0) {
     ball.x = BALL_RADIUS
     ball.dx *= -1
   }
-
   if (ball.y - BALL_RADIUS < 0) {
     ball.y = BALL_RADIUS
     ball.dy *= -1
   }
-
   if (
     ball.y + BALL_RADIUS >= paddle.y &&
     ball.y + BALL_RADIUS <= paddle.y + PADDLE_HEIGHT &&
@@ -174,7 +168,6 @@ function moveBall() {
       (ball.x - (paddle.x + paddleWidth / 2)) / (paddleWidth / 2)
     ball.dx = hitPosition * userBallSpeed
   }
-
   if (ball.y - BALL_RADIUS > canvas.height) {
     gameOver = true
     localStorage.setItem("highScore", Math.max(highScore, score))

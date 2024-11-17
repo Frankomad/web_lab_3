@@ -1,0 +1,84 @@
+/* General Reset */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrolling */
+  font-family: Arial, sans-serif; /* Default font */
+  background-color: black; /* Match game background */
+}
+
+/* Configuration Panel Styling */
+#configPanel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1e1e1e; /* Dark gray background */
+  color: white;
+  padding: 30px;
+  border: 3px solid #ff5722; /* Orange border */
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5); /* Drop shadow */
+}
+
+#configPanel h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ff5722;
+}
+
+#configPanel label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#configPanel input {
+  padding: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ff5722;
+  border-radius: 5px;
+  width: 60px;
+  text-align: center;
+}
+
+#configPanel button {
+  padding: 10px 20px;
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#configPanel button:hover {
+  background-color: #e64a19;
+}
+
+/* Canvas Styling */
+#gameCanvas {
+  display: none; /* Hidden until game starts */
+  background-color: black; /* Black background */
+  border: 2px solid #000; /* Optional border for canvas */
+}
+
+/* Button Styling (Dynamic Buttons for Game Over) */
+button {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #ff5722;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e64a19;
+}

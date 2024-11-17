@@ -143,7 +143,7 @@ function drawScore() {
 }
 
 function moveBall() {
-  const speedMultiplier = 1.4 // Adjust this value to control how much faster the ball gets
+  const speedMultiplier = 1.8 // Adjust this value to control how much faster the ball gets
 
   ball.x += ball.dx * speedMultiplier
   ball.y += ball.dy * speedMultiplier

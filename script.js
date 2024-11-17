@@ -6,8 +6,8 @@ const paddleWidthInput = document.getElementById("paddleWidth")
 const canvas = document.getElementById("gameCanvas")
 const ctx = canvas.getContext("2d")
 
-canvas.width = window.innerWidth
-canvas.height = window.innerHeight
+canvas.width = window.innerWidth - 10 // Adjust width to fit within the viewport
+canvas.height = window.innerHeight - 10 // Adjust height to fit within the viewport
 
 let userBallSpeed = 1
 let userBrickRows = 5

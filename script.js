@@ -60,12 +60,16 @@ function resetGame() {
   gameWon = false
   score = 0
 
-  const angle = Math.random() * (Math.PI / 2) - Math.PI / 4 // Random angle between -45 and 45 degrees
+  const angle = (Math.random() * 30 + 30) * (Math.PI / 180) // Random angle in radians
+  const speed = userBallSpeed // Use the user-specified speed
+
+  const direction = Math.random() < 0.5 ? -1 : 1 // -1 for left, 1 for right
+
   ball = {
     x: canvas.width / 2,
     y: canvas.height - 60,
-    dx: Math.cos(angle) * userBallSpeed,
-    dy: -Math.abs(Math.sin(angle) * userBallSpeed),
+    dx: Math.cos(angle) * speed * direction, // Horizontal velocity
+    dy: -Math.abs(Math.cos(angle) * speed * 2), // Vertical velocity (always upwards)
   }
 
   paddle.x = canvas.width / 2 - paddleWidth / 2

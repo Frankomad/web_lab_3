@@ -209,6 +209,10 @@ function moveBall() {
   }
 
   if (ball.y - BALL_RADIUS > canvas.height) {
+    // Update the high score before game over
+    highScore = Math.max(highScore, score)
+    localStorage.setItem("highScore", highScore)
+
     gameOver = true
   }
 }
